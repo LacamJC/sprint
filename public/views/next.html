@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Informações do Usuário</h1>
+        <div id="userData"></div>
+        <button onclick="location.href='index.html'">Voltar</button>
+    </div>
+    <script>
+        // Recuperar os dados do localStorage e exibir
+        const userData = JSON.parse(localStorage.getItem('userData'));
+        const userDiv = document.getElementById('userData');
+        userDiv.innerHTML = `
+            <p><strong>Nome:</strong> ${userData.name}</p>
+            <p><strong>CPF:</strong> ${userData.cpf}</p>
+            <p><strong>E-mail:</strong> ${userData.email}</p>
+            <p><strong>Telefone:</strong> ${userData.phone}</p>
+        `;
+    </script>
+</body>
+</html>
